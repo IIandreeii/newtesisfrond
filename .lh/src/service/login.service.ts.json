@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/service/login.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1745191087475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1745191096271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,5 @@\n \r\n \r\n \r\n \r\n+import []\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745191103507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-import []\n\\ No newline at end of file\n+import { }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745191112759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-import { }\n\\ No newline at end of file\n+import axios from 'axios';\r\n"
+                },
+                {
+                    "date": 1745191124199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-import axios from 'axios';\r\n+import axios from\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193038598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-import axios from\n\\ No newline at end of file\n+axios\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193044397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-axios\n\\ No newline at end of file\n+axios.default.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193050276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-axios.default.\n\\ No newline at end of file\n+axios.default.default\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193055771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \r\n \r\n \r\n \r\n-axios.default.default\n\\ No newline at end of file\n+axios.defaults.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193064950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n+import axios from \"axios\";\r\n \r\n \r\n \r\n \r\n \r\n\\ No newline at end of file\n-axios.defaults.\n+axios.defaults.base\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193072501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n \r\n \r\n \r\n \r\n-axios.defaults.base\n\\ No newline at end of file\n+axios.defaults.baseURL = en\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193077940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n+import { environment } from \"@/environments/environment\";\r\n import axios from \"axios\";\r\n \r\n \r\n \r\n \r\n \r\n\\ No newline at end of file\n-axios.defaults.baseURL = en\n+axios.defaults.baseURL = environment.apiUrl;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193118217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,9 @@\n \r\n \r\n \r\n \r\n-axios.defaults.baseURL = environment.apiUrl;\n\\ No newline at end of file\n+axios.defaults.baseURL = environment.apiUrl;\r\n+\r\n+\r\n+\r\n+ex\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193125604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n axios.defaults.baseURL = environment.apiUrl;\r\n \r\n \r\n \r\n-ex\n\\ No newline at end of file\n+export const use\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193131873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n axios.defaults.baseURL = environment.apiUrl;\r\n \r\n \r\n \r\n-export const use\n\\ No newline at end of file\n+export const useLogin = ()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193140034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n \r\n \r\n \r\n export const useLogin = () =>{\r\n-    const \r\n+    const l\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745193215190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n \r\n export const useLogin = () =>{\r\n     const login = useAuth();\r\n     const [getResponse, setGetResponse] = useState<any>(null);\r\n-    const [loader, setLoader] = useState(loafin);\r\n+    const [loader, setLoader] = useState(loafi);\r\n \r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1745191087475,
+            "name": "Commit-0",
+            "content": "\r\n\r\n\r\n\r\n\r\n"
+        }
+    ]
+}

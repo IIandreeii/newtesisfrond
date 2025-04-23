@@ -1,0 +1,46 @@
+import { useState } from "react";
+
+import axios from "axios";
+import { environment } from "@/environments/environment";
+
+axios.defaults.baseURL = environment.apiUrl;
+
+interface UseAxiosParams {
+  url: string;
+  method: "get" | "post" | "put" | "delete";
+  data?: unknown;
+  baseUrl?: string;
+}
+
+export const useAXIOS = <T>() => {
+  const [response, setResponse] = useState<T | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const execute = async (
+    axiosParams: UseAxiosParams
+  ): Promise<T | undefined> => {
+    const axiosResquestConfig : any = {
+      url: axiosParams.url,
+      method: axiosParams.method,
+      data: axiosParams.data,
+    };
+
+    if (axiosParams.baseUrl){
+        axiosResquestConfig.baseURL = axiosParams.baseUrl;
+    }
+
+
+    try {
+      setLoading(true);
+      const result = await axios(axiosResquestConfig);
+      setResponse(result.data);
+      return result.data as T;
+    } catch (err: any) {
+      setError(err.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+};

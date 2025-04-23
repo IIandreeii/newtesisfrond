@@ -1,0 +1,7 @@
+
+
+
+interface ToastContextType {
+
+    showErrot
+}

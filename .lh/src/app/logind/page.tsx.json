@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/app/logind/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1745196698816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1745196706850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,15 @@\n-export \n\\ No newline at end of file\n+import LoginForm from \"@/components/login-form\"\r\n+import AnimatedBackground from \"@/components/animated-background\"\r\n+\r\n+export default function Home() {\r\n+  return (\r\n+    <main className=\"min-h-screen relative overflow-hidden\">\r\n+      <AnimatedBackground />\r\n+      <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n+        <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n+          <LoginForm />\r\n+        </div>\r\n+      </div>\r\n+    </main>\r\n+  )\r\n+}\r\n"
+                },
+                {
+                    "date": 1745196720283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import LoginForm from \"@/components/login-form\"\r\n+import LoginForm from \"@/components/login\"\r\n import AnimatedBackground from \"@/components/animated-background\"\r\n \r\n export default function Home() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1745196726029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import LoginForm from \"@/components/login\"\r\n+import LoginForm from \"@/components/\"\r\n import AnimatedBackground from \"@/components/animated-background\"\r\n \r\n export default function Home() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1745196734537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-import LoginForm from \"@/components/\"\r\n-import AnimatedBackground from \"@/components/animated-background\"\r\n \r\n export default function Home() {\r\n   return (\r\n     <main className=\"min-h-screen relative overflow-hidden\">\r\n"
+                },
+                {
+                    "date": 1745196740869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import LoginForm from \"@/components/logind/logind\";\r\n \r\n export default function Home() {\r\n   return (\r\n     <main className=\"min-h-screen relative overflow-hidden\">\r\n"
+                },
+                {
+                    "date": 1745196791676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import AnimatedBackground from \"@/components/logind/animation\";\r\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n export default function Home() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1745196800016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import AnimatedBackground from \"@/components/logind/animation\";\r\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n-export default function Home() {\r\n+export default function Logind() {\r\n   return (\r\n     <main className=\"min-h-screen relative overflow-hidden\">\r\n       <AnimatedBackground />\r\n       <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n"
+                },
+                {
+                    "date": 1745197222101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n export default function Logind() {\r\n   return (\r\n     <main className=\"min-h-screen relative overflow-hidden\">\r\n-      <AnimatedBackground />\r\n+\r\n       <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n         <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n           <LoginForm />\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1745197257730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n-import AnimatedBackground from \"@/components/logind/animation\";\r\n+\r\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n export default function Logind() {\r\n   return (\r\n     <main className=\"min-h-screen relative overflow-hidden\">\r\n-\r\n       <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n         <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n           <LoginForm />\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1745197288585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n-\r\n+import AnimatedBackground from \"@/components/logind/animation\";\r\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n export default function Logind() {\r\n   return (\r\n     <main className=\"min-h-screen relative overflow-hidden\">\r\n+      <AnimatedBackground />\r\n       <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n         <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n           <LoginForm />\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1745198289195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,28 @@\n       </div>\r\n     </main>\r\n   )\r\n }\r\n+\r\n+\r\n+\r\n+import LoginForm from \"@/components/login-form\"\r\n+import AnimatedBackground from \"@/components/animated-background\"\r\n+import Navbar from \"@/components/navbar\"\r\n+import Footer from \"@/components/footer\"\r\n+\r\n+export default function Home() {\r\n+  return (\r\n+    <>\r\n+      <AnimatedBackground />\r\n+      <Navbar />\r\n+      <main className=\"min-h-screen relative pt-24 pb-16\">\r\n+        <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n+          <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n+            <LoginForm />\r\n+          </div>\r\n+        </div>\r\n+      </main>\r\n+      <Footer />\r\n+    </>\r\n+  )\r\n+}\r\n"
+                },
+                {
+                    "date": 1745198302667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n export default function Logind() {\r\n   return (\r\n-    <main className=\"min-h-screen relative overflow-hidden\">\r\n-      <AnimatedBackground />\r\n+<main className=\"min-h-screen relative pt-24 pb-16\">      <AnimatedBackground />\r\n       <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n         <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n           <LoginForm />\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1745198308979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n import AnimatedBackground from \"@/components/logind/animation\";\r\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n export default function Logind() {\r\n-  return (\r\n-<main className=\"min-h-screen relative pt-24 pb-16\">      <AnimatedBackground />\r\n-      <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n-        <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n-          <LoginForm />\r\n-        </div>\r\n-      </div>\r\n-    </main>\r\n-  )\r\n+    return (\r\n+        <main className=\"min-h-screen relative pt-24 pb-16\">      \r\n+        <AnimatedBackground />\r\n+            <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n+                <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n+                    <LoginForm />\r\n+                </div>\r\n+            </div>\r\n+        </main>\r\n+    )\r\n }\r\n \r\n \r\n \r\n@@ -20,19 +21,19 @@\n import Navbar from \"@/components/navbar\"\r\n import Footer from \"@/components/footer\"\r\n \r\n export default function Home() {\r\n-  return (\r\n-    <>\r\n-      <AnimatedBackground />\r\n-      <Navbar />\r\n-      <main className=\"min-h-screen relative pt-24 pb-16\">\r\n-        <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n-          <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n-            <LoginForm />\r\n-          </div>\r\n-        </div>\r\n-      </main>\r\n-      <Footer />\r\n-    </>\r\n-  )\r\n+    return (\r\n+        <>\r\n+            <AnimatedBackground />\r\n+            <Navbar />\r\n+            <main className=\"min-h-screen relative pt-24 pb-16\">\r\n+                <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n+                    <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n+                        <LoginForm />\r\n+                    </div>\r\n+                </div>\r\n+            </main>\r\n+            <Footer />\r\n+        </>\r\n+    )\r\n }\r\n"
+                },
+                {
+                    "date": 1745198326023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n import AnimatedBackground from \"@/components/animated-background\"\r\n import Navbar from \"@/components/navbar\"\r\n import Footer from \"@/components/footer\"\r\n \r\n-export default function Home() {\r\n+export default function Logind() {\r\n     return (\r\n         <>\r\n             <AnimatedBackground />\r\n             <Navbar />\r\n"
+                },
+                {
+                    "date": 1745198333351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,8 @@\n import AnimatedBackground from \"@/components/logind/animation\";\r\n import LoginForm from \"@/components/logind/logind\";\r\n \r\n-export default function Logind() {\r\n-    return (\r\n-        <main className=\"min-h-screen relative pt-24 pb-16\">      \r\n-        <AnimatedBackground />\r\n-            <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n-                <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n-                    <LoginForm />\r\n-                </div>\r\n-            </div>\r\n-        </main>\r\n-    )\r\n-}\r\n \r\n-\r\n-\r\n-import LoginForm from \"@/components/login-form\"\r\n-import AnimatedBackground from \"@/components/animated-background\"\r\n-import Navbar from \"@/components/navbar\"\r\n-import Footer from \"@/components/footer\"\r\n-\r\n export default function Logind() {\r\n     return (\r\n         <>\r\n             <AnimatedBackground />\r\n@@ -32,8 +13,8 @@\n                         <LoginForm />\r\n                     </div>\r\n                 </div>\r\n             </main>\r\n-            <Footer />\r\n+         \r\n         </>\r\n     )\r\n }\r\n"
+                },
+                {
+                    "date": 1745198339146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,14 @@\n export default function Logind() {\r\n     return (\r\n         <>\r\n             <AnimatedBackground />\r\n-            <Navbar />\r\n             <main className=\"min-h-screen relative pt-24 pb-16\">\r\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n                         <LoginForm />\r\n                     </div>\r\n                 </div>\r\n             </main>\r\n-         \r\n         </>\r\n     )\r\n }\r\n"
+                }
+            ],
+            "date": 1745196698816,
+            "name": "Commit-0",
+            "content": "export "
+        }
+    ]
+}

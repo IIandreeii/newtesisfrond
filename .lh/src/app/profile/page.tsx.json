@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/app/profile/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1745290683799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1745290690079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n import AnimatedBackground from \"@/components/logind/animation\";\r\n import UserProfile from \"@/components/profile/profile\";\r\n+import { AuthProvider } from \"@/context/AuthContext\";\r\n \r\n export default function ProfilePage() {\r\n   return (\r\n     <>\r\n-    \r\n+      <AuthProvider>\r\n+\r\n+      </AuthProvider>\r\n       <AnimatedBackground />\r\n       <main className=\"min-h-screen relative pt-24 pb-16\">\r\n         <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n           <UserProfile />\r\n"
+                },
+                {
+                    "date": 1745290697627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n         <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n           <UserProfile />\r\n         </div>\r\n       </main>\r\n-      \r\n+      </AuthProvider>\r\n     </>\r\n   )\r\n }\r\n"
+                },
+                {
+                    "date": 1745290711646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n       <main className=\"min-h-screen relative pt-24 pb-16\">\r\n         <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n           <UserProfile />\r\n         </div>\r\n-        \r\n       </main>\r\n       \r\n     </>\r\n   )\r\n"
+                }
+            ],
+            "date": 1745290683799,
+            "name": "Commit-0",
+            "content": "import AnimatedBackground from \"@/components/logind/animation\";\r\nimport UserProfile from \"@/components/profile/profile\";\r\n\r\nexport default function ProfilePage() {\r\n  return (\r\n    <>\r\n    \r\n      <AnimatedBackground />\r\n      <main className=\"min-h-screen relative pt-24 pb-16\">\r\n        <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n          <UserProfile />\r\n        </div>\r\n      </main>\r\n\r\n    </>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

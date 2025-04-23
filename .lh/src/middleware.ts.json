@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/middleware.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1745213052264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1745213062216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,9 @@\n   const authToken = request.cookies.get('auth-token')?.value;\r\n   \r\n   // Definir las rutas protegidas\r\n   const isProtectedRoute = \r\n-    request.nextUrl.pathname.startsWith('/profile') || \r\n-    request.nextUrl.pathname.startsWith('/dashboard') || \r\n-    request.nextUrl.pathname.startsWith('/admin');\r\n+    request.nextUrl.pathname.startsWith('/profile') \r\n   \r\n   // Definir las rutas de autenticación\r\n   const isAuthPage = \r\n     request.nextUrl.pathname === '/logind' || \r\n"
+                },
+                {
+                    "date": 1745213083296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,9 @@\n     request.nextUrl.pathname.startsWith('/profile') \r\n   \r\n   // Definir las rutas de autenticación\r\n   const isAuthPage = \r\n-    request.nextUrl.pathname === '/logind' || \r\n-    request.nextUrl.pathname === '/registro';\r\n+    request.nextUrl.pathname === '/logind'\r\n \r\n   // Si es una ruta protegida y no hay token, redirigir al login\r\n   if (isProtectedRoute && !authToken) {\r\n     return NextResponse.redirect(new URL('/logind', request.url));\r\n"
+                },
+                {
+                    "date": 1745213090599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,8 @@\n   // Definir las rutas de autenticación\r\n   const isAuthPage = \r\n     request.nextUrl.pathname === '/logind'\r\n \r\n-  // Si es una ruta protegida y no hay token, redirigir al login\r\n   if (isProtectedRoute && !authToken) {\r\n     return NextResponse.redirect(new URL('/logind', request.url));\r\n   }\r\n   \r\n"
+                },
+                {
+                    "date": 1745213102345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,8 @@\n export const config = {\r\n   matcher: [\r\n     // Rutas protegidas\r\n     '/profile/:path*',\r\n-    '/dashboard/:path*',\r\n-    '/admin/:path*',\r\n     // Rutas de autenticación\r\n     '/logind',\r\n     '/registro'\r\n   ],\r\n"
+                },
+                {
+                    "date": 1745213144843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { NextRequest, NextResponse } from 'next/server';\r\n+import { useAuth } from \"@/context/AuthContext\"\r\n \r\n export function middleware(request: NextRequest) {\r\n   // Obtener el token de las cookies\r\n   const authToken = request.cookies.get('auth-token')?.value;\r\n"
+                },
+                {
+                    "date": 1745213159138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { useAuth } from \"@/context/AuthContext\"\r\n \r\n export function middleware(request: NextRequest) {\r\n   // Obtener el token de las cookies\r\n-  const authToken = request.cookies.get('auth-token')?.value;\r\n+  const authToken = useAuth\r\n   \r\n   // Definir las rutas protegidas\r\n   const isProtectedRoute = \r\n     request.nextUrl.pathname.startsWith('/profile') \r\n"
+                },
+                {
+                    "date": 1745213164550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { useAuth } from \"@/context/AuthContext\"\r\n \r\n export function middleware(request: NextRequest) {\r\n   // Obtener el token de las cookies\r\n-  const authToken = useAuth\r\n+  const authToken = useAuth()\r\n   \r\n   // Definir las rutas protegidas\r\n   const isProtectedRoute = \r\n     request.nextUrl.pathname.startsWith('/profile') \r\n"
+                },
+                {
+                    "date": 1745213172690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n \r\n export function middleware(request: NextRequest) {\r\n   // Obtener el token de las cookies\r\n   const authToken = useAuth()\r\n+\r\n   \r\n+  \r\n   // Definir las rutas protegidas\r\n   const isProtectedRoute = \r\n     request.nextUrl.pathname.startsWith('/profile') \r\n   \r\n"
+                },
+                {
+                    "date": 1745213184005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export function middleware(request: NextRequest) {\r\n   // Obtener el token de las cookies\r\n   const authToken = useAuth()\r\n \r\n-  conso\r\n+  console\r\n   \r\n   // Definir las rutas protegidas\r\n   const isProtectedRoute = \r\n     request.nextUrl.pathname.startsWith('/profile') \r\n"
+                },
+                {
+                    "date": 1745213270195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export function middleware(request: NextRequest) {\r\n   // Obtener el token de las cookies\r\n   const authToken = request.cookies.get('auth-token')?.value;\r\n   \r\n-  \r\n+  c\r\n   // Definir las rutas protegidas\r\n   const isProtectedRoute = \r\n     request.nextUrl.pathname.startsWith('/profile') \r\n   \r\n"
+                }
+            ],
+            "date": 1745213052264,
+            "name": "Commit-0",
+            "content": "import { NextRequest, NextResponse } from 'next/server';\r\n\r\nexport function middleware(request: NextRequest) {\r\n  // Obtener el token de las cookies\r\n  const authToken = request.cookies.get('auth-token')?.value;\r\n  \r\n  // Definir las rutas protegidas\r\n  const isProtectedRoute = \r\n    request.nextUrl.pathname.startsWith('/profile') || \r\n    request.nextUrl.pathname.startsWith('/dashboard') || \r\n    request.nextUrl.pathname.startsWith('/admin');\r\n  \r\n  // Definir las rutas de autenticación\r\n  const isAuthPage = \r\n    request.nextUrl.pathname === '/logind' || \r\n    request.nextUrl.pathname === '/registro';\r\n\r\n  // Si es una ruta protegida y no hay token, redirigir al login\r\n  if (isProtectedRoute && !authToken) {\r\n    return NextResponse.redirect(new URL('/logind', request.url));\r\n  }\r\n  \r\n  // Si es una página de auth y ya tiene token, redirigir al perfil\r\n  if (isAuthPage && authToken) {\r\n    return NextResponse.redirect(new URL('/profile', request.url));\r\n  }\r\n  \r\n  // En cualquier otro caso, continuar con la solicitud\r\n  return NextResponse.next();\r\n}\r\n\r\n// Configurar específicamente qué rutas usa el middleware\r\nexport const config = {\r\n  matcher: [\r\n    // Rutas protegidas\r\n    '/profile/:path*',\r\n    '/dashboard/:path*',\r\n    '/admin/:path*',\r\n    // Rutas de autenticación\r\n    '/logind',\r\n    '/registro'\r\n  ],\r\n};"
+        }
+    ]
+}

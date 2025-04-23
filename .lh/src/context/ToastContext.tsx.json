@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/context/ToastContext.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1745190561821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1745190568507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n \r\n \r\n \r\n-interface \n\\ No newline at end of file\n+interface ToastContextType {\r\n+\r\n+    \r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745190573861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \r\n \r\n interface ToastContextType {\r\n \r\n-    \r\n+    showErrot\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745190580113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \r\n \r\n \r\n interface ToastContextType {\r\n-\r\n-    showErrot\r\n+    showErrotr: (message: string) => void;\r\n+    showSuccess: (message: string) => void;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745190586681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,9 @@\n \r\n interface ToastContextType {\r\n     showErrotr: (message: string) => void;\r\n     showSuccess: (message: string) => void;\r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n+\r\n+\r\n+const ToastContextType\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745190599406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,51 @@\n+import React, { createContext, useContext, useRef, ReactNode } from 'react';\r\n+import { Toast } from 'primereact/toast';\r\n+import { ToastMessage } from 'primereact/toast';\r\n \r\n-\r\n-\r\n interface ToastContextType {\r\n-    showErrotr: (message: string) => void;\r\n+    showError: (message: string) => void;\r\n     showSuccess: (message: string) => void;\r\n }\r\n\\ No newline at end of file\n \r\n+const ToastContext = createContext<ToastContextType | undefined>(undefined);\r\n \r\n+export const useToast = (): ToastContextType => {\r\n+    const context = useContext(ToastContext);\r\n+    if (!context) {\r\n+        throw new Error('useToast must be used within a ToastProvider');\r\n+    }\r\n+    return context;\r\n+};\r\n \r\n-const ToastContextType\n+interface ToastProviderProps {\r\n+    children: ReactNode;\r\n+}\r\n+\r\n+export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {\r\n+    const toast = useRef<Toast>(null);\r\n+\r\n+    const showError = (message: string) => {\r\n+        toast.current?.show({\r\n+            severity: 'error',\r\n+            summary: 'Error',\r\n+            detail: message,\r\n+            life: 3000,\r\n+        } as ToastMessage);\r\n+    };\r\n+\r\n+    const showSuccess = (message: string) => {\r\n+        toast.current?.show({\r\n+            severity: 'success',\r\n+            summary: 'Success',\r\n+            detail: message,\r\n+            life: 3000,\r\n+        } as ToastMessage);\r\n+    };\r\n+\r\n+    return (\r\n+        <ToastContext.Provider value={{ showError, showSuccess }}>\r\n+            <Toast ref={toast} />\r\n+            {children}\r\n+        </ToastContext.Provider>\r\n+    );\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1745203939876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\r\n import React, { createContext, useContext, useRef, ReactNode } from 'react';\r\n import { Toast } from 'primereact/toast';\r\n import { ToastMessage } from 'primereact/toast';\r\n \r\n"
+                },
+                {
+                    "date": 1745204344269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n-\r\n+\"use client\";\r\n import React, { createContext, useContext, useRef, ReactNode } from 'react';\r\n import { Toast } from 'primereact/toast';\r\n import { ToastMessage } from 'primereact/toast';\r\n \r\n interface ToastContextType {\r\n+    current: any;\r\n     showError: (message: string) => void;\r\n     showSuccess: (message: string) => void;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1745204366624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n import { Toast } from 'primereact/toast';\r\n import { ToastMessage } from 'primereact/toast';\r\n \r\n interface ToastContextType {\r\n-    current: any;\r\n     showError: (message: string) => void;\r\n     showSuccess: (message: string) => void;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1745204423421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { Toast } from 'primereact/toast';\r\n import { ToastMessage } from 'primereact/toast';\r\n \r\n interface ToastContextType {\r\n+    [x: string]: any;\r\n     showError: (message: string) => void;\r\n     showSuccess: (message: string) => void;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1745205423714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n \"use client\";\r\n import React, { createContext, useContext, useRef, ReactNode } from 'react';\r\n import { Toast } from 'primereact/toast';\r\n import { ToastMessage } from 'primereact/toast';\r\n+// Añade estas importaciones\r\n+import 'primereact/resources/themes/lara-light-indigo/theme.css';   // tema (o el que prefieras)\r\n+import 'primereact/resources/primereact.min.css';                    // core\r\n+import 'primeicons/primeicons.css';                                  // iconos\r\n \r\n interface ToastContextType {\r\n     [x: string]: any;\r\n     showError: (message: string) => void;\r\n"
+                }
+            ],
+            "date": 1745190561821,
+            "name": "Commit-0",
+            "content": "\r\n\r\n\r\ninterface "
+        }
+    ]
+}
