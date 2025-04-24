@@ -3,11 +3,23 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1745196112103,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1745462995436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n ChartContainer.displayName = \"Chart\"\n \n const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {\n   const colorConfig = Object.entries(config).filter(\n-    ([_, config]) => config.theme || config.color\n+    ( config]) => config.theme || config.color\n   )\n \n   if (!colorConfig.length) {\n     return null\n"
+                },
+                {
+                    "date": 1745463056749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n ChartContainer.displayName = \"Chart\"\n \n const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {\n   const colorConfig = Object.entries(config).filter(\n-    ( config]) => config.theme || config.color\n+    ([_key, config]) => config.theme || config.color\n   )\n \n   if (!colorConfig.length) {\n     return null\n"
+                },
+                {
+                    "date": 1745463097089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n ChartContainer.displayName = \"Chart\"\n \n const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {\n   const colorConfig = Object.entries(config).filter(\n-    ([_key, config]) => config.theme || config.color\n+    ([, itemConfig]) => itemConfig.theme || itemConfig.color\n   )\n \n   if (!colorConfig.length) {\n     return null\n"
                 }
             ],
             "date": 1745196112103,

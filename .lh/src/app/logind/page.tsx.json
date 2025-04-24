@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1745196698816,
@@ -72,6 +72,66 @@
                 {
                     "date": 1745198339146,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,14 @@\n export default function Logind() {\r\n     return (\r\n         <>\r\n             <AnimatedBackground />\r\n-            <Navbar />\r\n             <main className=\"min-h-screen relative pt-24 pb-16\">\r\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n                         <LoginForm />\r\n                     </div>\r\n                 </div>\r\n             </main>\r\n-         \r\n         </>\r\n     )\r\n }\r\n"
+                },
+                {
+                    "date": 1745457035010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,18 @@\n-import AnimatedBackground from \"@/components/logind/animation\";\r\n-import LoginForm from \"@/components/logind/logind\";\r\n-\r\n-\r\n-export default function Logind() {\r\n-    return (\r\n-        <>\r\n-            <AnimatedBackground />\r\n-            <main className=\"min-h-screen relative pt-24 pb-16\">\r\n-                <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\r\n-                    <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\r\n-                        <LoginForm />\r\n-                    </div>\r\n-                </div>\r\n-            </main>\r\n-        </>\r\n-    )\r\n-}\r\n+import AnimatedBackground from \"@/components/logind/animation\";\n+import LoginForm from \"@/components/logind/logind\";\n+import { AuthProvider } from \"@/context/AuthContext\";\n+\n+export default function Logind() {\n+    return (\n+        <>\n+            <AnimatedBackground />\n+            <main className=\"min-h-screen relative pt-24 pb-16\">\n+                <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n+                    <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n+                        <LoginForm />\n+                    </div>\n+                </div>\n+            </main>\n+        </>\n+    )\n+}\n"
+                },
+                {
+                    "date": 1745457040148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthProvider } from \"@/context/AuthContext\";\n \n export default function Logind() {\n     return (\n-        <>\n+        <>AuthProvider\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n"
+                },
+                {
+                    "date": 1745457047316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n import { AuthProvider } from \"@/context/AuthContext\";\n \n export default function Logind() {\n     return (\n-        <>AuthProvider\n+        <>\n+        <AuthProvider></AuthProvider>\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n"
+                },
+                {
+                    "date": 1745457056682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,17 @@\n \n export default function Logind() {\n     return (\n         <>\n-        <AuthProvider></AuthProvider>\n+        <AuthProvider>\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n+            </AuthProvider>\n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745457074652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,18 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import LoginForm from \"@/components/logind/logind\";\n-import { AuthProvider } from \"@/context/AuthContext\";\n \n+\n export default function Logind() {\n     return (\n         <>\n-        <AuthProvider>\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n-            </AuthProvider>\n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745457322782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n-        </>\n+        </>yyy\n     )\n }\n"
+                },
+                {
+                    "date": 1745458010337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,19 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import LoginForm from \"@/components/logind/logind\";\n \n-\n+import Navbar from \"@/components/nav/navbar\";\n export default function Logind() {\n     return (\n         <>\n+        \n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n-        </>yyy\n+        </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745458018988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import Navbar from \"@/components/nav/navbar\";\n export default function Logind() {\n     return (\n         <>\n-        \n+        <Navbar></Navbar>\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n"
+                },
+                {
+                    "date": 1745458025807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import Navbar from \"@/components/nav/navbar\";\n export default function Logind() {\n     return (\n         <>\n-        <Navbar></Navbar>\n+        <Navbar>\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n"
+                },
+                {
+                    "date": 1745458053167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,17 @@\n import Navbar from \"@/components/nav/navbar\";\n export default function Logind() {\n     return (\n         <>\n-        <Navbar>\n+        <Navbar />\n             <AnimatedBackground />\n             <main className=\"min-h-screen relative pt-24 pb-16\">\n                 <div className=\"container mx-auto max-w-6xl relative z-10 py-8\">\n                     <div className=\"flex flex-col lg:flex-row items-center justify-between gap-8\">\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n+            </Navbar>\n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745458319111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import LoginForm from \"@/components/logind/logind\";\n-\n import Navbar from \"@/components/nav/navbar\";\n export default function Logind() {\n     return (\n         <>\n@@ -13,8 +12,8 @@\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n-            </Navbar>\n+       \n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745458374200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,8 @@\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n-       \n+            \n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745458398282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import LoginForm from \"@/components/logind/logind\";\n import Navbar from \"@/components/nav/navbar\";\n+import Navbar from \"@/components/nav/navbar\";\n export default function Logind() {\n     return (\n         <>\n         <Navbar />\n@@ -12,8 +13,8 @@\n                         <LoginForm />\n                     </div>\n                 </div>\n             </main>\n-            \n+            <Footer />\n         </>\n     )\n }\n"
+                },
+                {
+                    "date": 1745458414130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import LoginForm from \"@/components/logind/logind\";\n import Navbar from \"@/components/nav/navbar\";\n-import Navbar from \"@/components/nav/navbar\";\n+import Footer from \"@/components/footer/footer\";\n export default function Logind() {\n     return (\n         <>\n         <Navbar />\n"
+                },
+                {
+                    "date": 1745458447253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import LoginForm from \"@/components/logind/logind\";\n-import Navbar from \"@/components/nav/navbar\";\n+import Navbar from \"@/components/Landing/nav/navbar\";\n import Footer from \"@/components/footer/footer\";\n export default function Logind() {\n     return (\n         <>\n"
                 }
             ],
             "date": 1745196698816,

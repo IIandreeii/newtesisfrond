@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1745188438461,
@@ -32,6 +32,102 @@
                 {
                     "date": 1745205990059,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import LandingPage from \"@/components/Landing/landing\";\n+import AnimatedBackground from \"@/components/logind/animation\";\n \n export default function Home() {\n   return (\n     <>\n@@ -7,8 +8,8 @@\n       <Navbar />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-      <Footer />\n+\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745456884837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,10 @@\n export default function Home() {\n   return (\n     <>\n       <AnimatedBackground />\n-      <Navbar />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745456901874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n export default function Home() {\n   return (\n     <>\n+    <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n"
+                },
+                {
+                    "date": 1745456913305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n+      \n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745456929485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import LandingPage from \"@/components/Landing/landing\";\n import AnimatedBackground from \"@/components/logind/animation\";\n+import Navbar from \"@/components/nav/navbar\";\n+import Footer from \"@/components/footer/footer\";\n \n export default function Home() {\n   return (\n     <>\n@@ -8,8 +10,8 @@\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-      \n+      <Footer />\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745456944959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n \n export default function Home() {\n   return (\n     <>\n+            <ToastProvider ></ToastProvider>\n     <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n"
+                },
+                {
+                    "date": 1745456950888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,15 @@\n \n export default function Home() {\n   return (\n     <>\n-            <ToastProvider ></ToastProvider>\n+            <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n       <Footer />\n+      </ToastProvider>\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745456971890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import LandingPage from \"@/components/Landing/landing\";\n import AnimatedBackground from \"@/components/logind/animation\";\n import Navbar from \"@/components/nav/navbar\";\n import Footer from \"@/components/footer/footer\";\n-\n+import { ToastProvider } from \"@/context/ToastContext\";\n export default function Home() {\n   return (\n     <>\n             <ToastProvider >\n"
+                },
+                {
+                    "date": 1745457092443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { ToastProvider } from \"@/context/ToastContext\";\n export default function Home() {\n   return (\n     <>\n+    <AuthProvider></AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n"
+                },
+                {
+                    "date": 1745457105804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import Navbar from \"@/components/nav/navbar\";\n import Footer from \"@/components/footer/footer\";\n import { ToastProvider } from \"@/context/ToastContext\";\n+import { AuthProvider } from \"@/context/AuthContext\";\n+\n export default function Home() {\n   return (\n     <>\n     <AuthProvider></AuthProvider>\n"
+                },
+                {
+                    "date": 1745457111143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,17 @@\n \n export default function Home() {\n   return (\n     <>\n-    <AuthProvider></AuthProvider>\n+    <AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n       <Footer />\n       </ToastProvider>\n+      </AuthProvider>\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745457199425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n-      <main className=\"min-h-screen relative pt-16 pb-16\">\n+      \n         <LandingPage />\n       </main>\n       <Footer />\n       </ToastProvider>\n"
+                },
+                {
+                    "date": 1745457207961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n export default function Home() {\n   return (\n     <>\n+    <main className=\"min-h-screen relative pt-16 pb-16\">\n     <AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n"
+                },
+                {
+                    "date": 1745457214848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,9 @@\n       </main>\n       <Footer />\n       </ToastProvider>\n       </AuthProvider>\n+      </main>\n     </>\n+\n   )\n }\n"
+                },
+                {
+                    "date": 1745457238507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,20 +7,17 @@\n \n export default function Home() {\n   return (\n     <>\n-    <main className=\"min-h-screen relative pt-16 pb-16\">\n     <AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n-      \n+      <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n       <Footer />\n       </ToastProvider>\n       </AuthProvider>\n-      </main>\n     </>\n-\n   )\n }\n"
+                },
+                {
+                    "date": 1745457252215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,22 +2,19 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import Navbar from \"@/components/nav/navbar\";\n import Footer from \"@/components/footer/footer\";\n import { ToastProvider } from \"@/context/ToastContext\";\n-import { AuthProvider } from \"@/context/AuthContext\";\n-\n export default function Home() {\n   return (\n     <>\n-    <AuthProvider>\n+    <AuthProvider></AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n       <Footer />\n       </ToastProvider>\n-      </AuthProvider>\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745457257328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,19 +2,22 @@\n import AnimatedBackground from \"@/components/logind/animation\";\n import Navbar from \"@/components/nav/navbar\";\n import Footer from \"@/components/footer/footer\";\n import { ToastProvider } from \"@/context/ToastContext\";\n+import { AuthProvider } from \"@/context/AuthContext\";\n+\n export default function Home() {\n   return (\n     <>\n-    <AuthProvider></AuthProvider>\n+    <AuthProvider>\n             <ToastProvider >\n     <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n       <Footer />\n       </ToastProvider>\n+      </AuthProvider>\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745457352027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,14 @@\n import LandingPage from \"@/components/Landing/landing\";\n import AnimatedBackground from \"@/components/logind/animation\";\n-import Navbar from \"@/components/nav/navbar\";\n-import Footer from \"@/components/footer/footer\";\n-import { ToastProvider } from \"@/context/ToastContext\";\n-import { AuthProvider } from \"@/context/AuthContext\";\n \n export default function Home() {\n   return (\n     <>\n-    <AuthProvider>\n-            <ToastProvider >\n-    <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-      <Footer />\n-      </ToastProvider>\n-      </AuthProvider>\n+\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745457863673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,7 @@\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745458188949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n export default function Home() {\n   return (\n     <>\n+            <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n"
+                },
+                {
+                    "date": 1745458203832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import LandingPage from \"@/components/Landing/landing\";\n import AnimatedBackground from \"@/components/logind/animation\";\n-\n+import Navbar from \"@/components/nav/navbar\";\n export default function Home() {\n   return (\n     <>\n             <Navbar />\n"
+                },
+                {
+                    "date": 1745458336363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import Navbar from \"@/components/nav/navbar\";\n export default function Home() {\n   return (\n     <>\n-            <Navbar />\n+      <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n"
+                },
+                {
+                    "date": 1745458352436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n+      \n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745458360141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-      \n+      <Fo\n     </>\n   )\n }\n"
+                },
+                {
+                    "date": 1745458447268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n+import Footer from \"@/components/footer/footer\";\n import LandingPage from \"@/components/Landing/landing\";\n import AnimatedBackground from \"@/components/logind/animation\";\n-import Navbar from \"@/components/nav/navbar\";\n+import Navbar from \"@/components/Landing/nav/navbar\";\n export default function Home() {\n   return (\n     <>\n       <Navbar />\n       <AnimatedBackground />\n       <main className=\"min-h-screen relative pt-16 pb-16\">\n         <LandingPage />\n       </main>\n-      <Fo\n+      <Footer />\n     </>\n   )\n }\n"
                 }
             ],
             "date": 1745188438460,

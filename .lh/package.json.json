@@ -1,0 +1,18 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1745453087602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1745453087602,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"organizaciones-front\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\"\n  },\n  \"dependencies\": {\n    \"@radix-ui/react-label\": \"^2.1.4\",\n    \"@radix-ui/react-progress\": \"^1.1.4\",\n    \"@radix-ui/react-tabs\": \"^1.1.8\",\n    \"@radix-ui/react-tooltip\": \"^1.2.3\",\n    \"axios\": \"^1.8.4\",\n    \"class-variance-authority\": \"^0.7.1\",\n    \"clsx\": \"^2.1.1\",\n    \"js-cookie\": \"^3.0.5\",\n    \"lucide-react\": \"^0.501.0\",\n    \"next\": \"15.3.1\",\n    \"organizaciones-front\": \"file:\",\n    \"primeicons\": \"^7.0.0\",\n    \"primereact\": \"^10.9.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\",\n    \"recharts\": \"^2.15.3\",\n    \"tailwind-merge\": \"^3.2.0\"\n  },\n  \"devDependencies\": {\n    \"@eslint/eslintrc\": \"^3\",\n    \"@tailwindcss/postcss\": \"^4\",\n    \"@types/js-cookie\": \"^3.0.6\",\n    \"@types/node\": \"^20\",\n    \"@types/react\": \"^19\",\n    \"@types/react-dom\": \"^19\",\n    \"@types/recharts\": \"^1.8.29\",\n    \"eslint\": \"^9\",\n    \"eslint-config-next\": \"15.3.1\",\n    \"tailwindcss\": \"^4\",\n    \"typescript\": \"^5\"\n  }\n}\n"
+        }
+    ]
+}
